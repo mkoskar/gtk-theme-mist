@@ -2,8 +2,8 @@
  gtk-theme-mist
 ================
 
-Description: Mist theme for gtk2/3
-Licence: GPL
+:Description: Mist theme for gtk2/3
+:Licence: GPL
 
 
 gtk-2.0
@@ -18,7 +18,7 @@ gtk-3.0
 =======
 
 * uses default gtk3 engine
-* based on Mist-Redmond 1.2 (gtk3.8-theme_Mist-Redmond)
+* based on Mist-Redmond 1.2 (gtk3.8-theme_Mist-Redmond) taken from
   http://gnome-look.org/content/show.php?content=155580
 * work in progress (goal is to match gtk2 version as closely as possible)
 
