@@ -1,0 +1,19 @@
+@define-color bg_color #eaeaea;
+@define-color fg_color #000;
+@define-color selected_bg_color #729fcf;
+@define-color selected_fg_color #fff;
+@define-color base_color #fff;
+@define-color text_color #000;
+
+@define-color border_color #a4a4a4;
+@define-color insensitive_border_color #9c9c9c;
+@define-color progressbar_border_color #536f8c;
+
+@define-color info_fg_color rgb (181, 171, 156);
+@define-color info_bg_color rgb (252, 252, 189);
+@define-color warning_fg_color rgb (173, 120, 41);
+@define-color warning_bg_color rgb (250, 173, 61);
+@define-color question_fg_color rgb (97, 122, 214);
+@define-color question_bg_color rgb (138, 173, 212);
+@define-color error_fg_color rgb (166, 38, 38);
+@define-color error_bg_color rgb (237, 54, 54);
