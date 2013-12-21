@@ -1,9 +1,21 @@
+/*
+ *      TODO
+ *      ====
+ *
+ *      - scrolled window corner
+ *      - progressbar inner border
+ *      - on|off buttons
+ *      - menus labels
+ *      - menus tooltips
+ *      - menus shortcut hints
+ */
+
 /**********************************************/
 * {
     -GtkWindow-resize-grip-height: 0;
     -GtkWindow-resize-grip-width: 0;
 
-    -GtkWidget-focus-line-width: 0;
+    -GtkWidget-focus-line-pattern: "\0";
 
     -GtkCheckButton-indicator-size: 12;
     -GtkCheckMenuItem-indicator-size: 12;
@@ -15,23 +27,26 @@
 
     -GtkMenuItem-arrow-scaling: 0.7;
 
-    -GtkButton-child-displacement-x: 1;
-    -GtkButton-child-displacement-y: 1;
+    -GtkButton-child-displacement-x: 0;
+    -GtkButton-child-displacement-y: 0;
     -GtkButton-default-border: 0;
 
     -GtkScrolledWindow-scrollbar-spacing: 3;
 
-    -GtkComboBox-appears-as-list: true;
-
     -GtkRange-trough-border: 0;
     -GtkRange-stepper-spacing: -1;
 
-    padding: 0;
+    -GtkNotebook-initial-gap: 0;
+    -GtkNotebook-tab-curvature: 0;
+    -GtkNotebook-tab-overlap: 2;
 
+    -GtkPaned-handle-size: 5;
+
+    padding: 0;
     color: @fg_color;
     border-color: @border_color;
     border-style: solid;
-    border-width: 1;
+    border-width: 1px;
 }
 
 *:prelight 
@@ -40,16 +55,31 @@
     color: @fg_color;
 }
 
-*:selected
+*:selected,
+.view:selected,
+.entry:selected
 {
-    background-color: @selected_bg_color;
+    background-color: @selected_bg_color1;
     color: @fg_color;
 }
 
-*:selected:focused 
+*:selected:focused,
+.view:selected:focused,
+.entry:selected:focused
 {
     background-color: @selected_bg_color;
     color: @selected_fg_color;
+}
+
+*:focused
+{
+    color: @border_color;
+}
+
+.view:focused,
+.entry:focused
+{
+    color: @fg_color;
 }
 
 *:insensitive 
@@ -58,19 +88,11 @@
     border-color: @insensitive_border_color;
     color: mix(@fg_color, @base_color, 0.5);
 }
-/**********************************************/
 
-
-/**********************************************/
-/* Members: GtkWindow. */
 .background 
 {
     background-color: @bg_color;
     border: none;
-}
-
-.grip 
-{
 }
 /**********************************************/
 
@@ -92,7 +114,7 @@ GtkImage:insensitive
 /**********************************************/
 GtkStatusbar *
 {
-    border-width: 1 0 0 0;
+    border-width: 1px 0 0 0;
 }
 
 GtkStatusbar GtkLabel
@@ -115,18 +137,9 @@ GtkStatusbar GtkLabel
 
 /**********************************************/
 /* Members: GtkViewport. */
-.viewport
-{
-}
-
 .view
 {
     background-color: @base_color;
-}
-
-.view:selected
-{
-    background-color: @selected_bg_color;
 }
 /**********************************************/
 
@@ -146,11 +159,6 @@ row:nth-child(odd)
 {
     background-color: shade(@base_color, 0.97);
 }
-
-/* Members: GtkCellRendererToggle. */
-.cell 
-{
-}
 /**********************************************/
 
 
@@ -163,7 +171,7 @@ row:nth-child(odd)
 .trough row:selected:focused
 {
     background-color: mix(@fg_color, @bg_color, 0.9);
-    border-width: 1;
+    border-width: 1px;
 }
 
 .trough row:selected
@@ -183,6 +191,48 @@ row:nth-child(odd)
 {
     border-color: @border_color;
 }
+
+GtkProgressBar.trough
+{
+    background-color: @bg_color;
+}
+
+GtkScale {
+    border-color: @border_color1;
+}
+/**********************************************/
+
+
+/**********************************************/
+GtkSwitch.trough 
+{
+    background-color: transparent;
+}
+
+GtkSwitch.trough:active 
+{
+    background-color: @selected_bg_color;
+    color: @selected_fg_color;
+}
+
+GtkSwitch.trough:insensitive 
+{
+    background-color: shade(@bg_color, 0.95);
+}
+/**********************************************/
+
+
+/**********************************************/
+/* Members: GtkScale, GtkScrollbar. */
+.slider 
+{
+    background-color: @bg_color;
+}
+
+.slider:insensitive
+{
+    background-color: shade(@bg_color, 0.95);
+}
 /**********************************************/
 
 
@@ -198,6 +248,12 @@ row:nth-child(odd)
 .pane-separator 
 {
     border-width: 0;
+    background-color: @bg_color;
+}
+
+.pane-separator:prelight
+{
+    background-color: shade(@base_color, 0.95);
 }
 /**********************************************/
 
@@ -207,9 +263,9 @@ row:nth-child(odd)
 .button 
 {
     background-color: @bg_color;
-    border-left-color: #fff;
-    border-top-color: #fff;
-    padding: 1;
+    border-left-color: @base_color;
+    border-top-color: @base_color;
+    padding: 1px;
 }
 
 .button:prelight
@@ -241,7 +297,7 @@ row:nth-child(odd)
 .entry 
 {
     background-color: @base_color;
-    padding: 2 2 3 2;
+    padding: 2px 2px 3px 2px;
 }
 
 .entry:insensitive 
@@ -300,7 +356,7 @@ GtkCheckButton:insensitive
 .radio row
 {
     background-color: @base_color;
-    border-width: 1;
+    border-width: 1px;
 }
 /**********************************************/
 
@@ -328,8 +384,8 @@ GtkComboBox .button
 /* Members: GtkToolbar. */
 .toolbar
 {
-    padding: 2 0;
-    border-width: 0 0 1 0;
+    padding: 2px 0;
+    border-width: 0 0 1px 0;
 }
 /**********************************************/
 
@@ -342,8 +398,7 @@ GtkComboBox .button
 {
     background-color: @selected_bg_color;
     color: @selected_fg_color;
-    border-color: @progressbar_border_color;
-    border-width: 1;
+    border-width: 1px;
 }
 
 .progressbar row:selected
@@ -362,23 +417,23 @@ GtkComboBox .button
 /* Members: GtkMenuBar. */
 .menubar 
 {
-    border-width: 0 0 1 0;
+    border-width: 0 0 1px 0;
 }
 
 .menubar .menuitem
 {
-    padding: 3 7 2 7;
+    padding: 3px 7px 2px 7px;
 }
 
 .menubar .separator
 {
-    padding: 3;
+    padding: 3px;
 }
 
 /* Members: GtkCheckMenuItem, GtkRadioMenuItem, GtkMenu, GtkMenuItem. */
 .menu, .menuitem 
 {
-    padding: 2;
+    padding: 2px;
 }
 
 /* Members: GtkMenuItem. */
@@ -403,7 +458,7 @@ GtkComboBox .button
     background-color: @base_color;
     color: @selected_bg_color;
     border-color: @border_color;
-    border-width: 1;
+    border-width: 1px;
 }
 
 .menuitem.check,
@@ -427,38 +482,105 @@ GtkComboBox .button
 
 
 /**********************************************/
-GtkNotebook
+.notebook
 {
-    tab-overlap: 1;
+    padding: 0;
     background-color: @bg_color;
-    border-color: #fff;
+
+    border-color: @base_color;
     border-right-color: @border_color;
     border-bottom-color: @border_color;
 }
 
-GtkNotebook tab 
+.notebook tab
 {
+    padding: 3px;
     background-color: mix(@fg_color, @bg_color, 0.9);
-    border: none;
-    border-top: 1 solid @bg_color;
-    border-right: 1 solid #939393;
-    border-left: 1 solid #939393;
-    box-shadow: inset 0 1 #fff;
-    padding: 3;
 }
 
-GtkNotebook tab:first-child
-{
-    border-left: none;
-    box-shadow: inset 1 0 #fff, inset 0 1 #fff;
-}
-
-GtkNotebook tab:active
+.notebook tab:active
 {
     background-color: @bg_color;
-    border: none;
-    border-right: 1 solid @border_color;
-    box-shadow: inset 1 0 #fff, inset 0 1 #fff;
+}
+
+.notebook tab.top
+{
+    padding-bottom: 1px;
+    border-right-color: @border_color1;
+    border-left-color: @border_color1;
+}
+
+.notebook tab:first-child.top
+{
+    border-left-color: @base_color;
+}
+
+.notebook tab.top:active
+{
+    border-right-color: @border_color;
+    border-left-color: @base_color;
+    padding-bottom: 2px;
+}
+
+.notebook tab.bottom
+{
+    padding-top: 1px;
+    border-right-color: @border_color1;
+    border-left-color: @border_color1;
+    border-bottom-color: @border_color1;
+}
+
+.notebook tab:first-child.bottom
+{
+    border-left-color: @base_color;
+}
+
+.notebook tab.bottom:active
+{
+    border-right-color: @border_color;
+    border-left-color: @base_color;
+    border-bottom-color: @border_color;
+    padding-top: 2px;
+}
+
+.notebook tab.left
+{
+    padding-right: 1px;
+    border-bottom-color: @border_color1;
+    border-top-color: @border_color1;
+}
+
+.notebook tab:first-child.left
+{
+    border-top-color: @base_color;
+}
+
+.notebook tab.left:active
+{
+    border-bottom-color: @border_color;
+    border-top-color: @base_color;
+    padding-right: 2px;
+}
+
+.notebook tab.right
+{
+    padding-left: 1px;
+    border-bottom-color: @border_color1;
+    border-top-color: @border_color1;
+    border-right-color: @border_color1;
+}
+
+.notebook tab:first-child.right
+{
+    border-top-color: @base_color;
+}
+
+.notebook tab.right:active
+{
+    border-bottom-color: @border_color;
+    border-top-color: @base_color;
+    border-right-color: @border_color;
+    padding-left: 2px;
 }
 /**********************************************/
 
@@ -485,38 +607,6 @@ GtkNotebook tab:active
 
 
 /**********************************************/
-GtkSwitch.trough 
-{
-    background-color: transparent;
-}
-
-GtkSwitch.trough:active 
-{
-    background-color: @selected_bg_color;
-    color: @selected_fg_color;
-}
-
-GtkSwitch.trough:insensitive 
-{
-    background-color: shade(@bg_color, 0.95);
-}
-/**********************************************/
-
-
-/**********************************************/
-/* Members: GtkScale, GtkScrollbar. */
-.slider 
-{
-    background-color: @bg_color;
-}
-
-.slider:insensitive
-{
-    background-color: shade(@bg_color, 0.95);
-}
-/**********************************************/
-
-
 .accelerator 
 {
     /* Members: GtkAccelLabel. */
@@ -532,7 +622,8 @@ GtkSwitch.trough:insensitive
     /* Members: GtkCalendar. */
 }
 
-.dock {
+.dock
+{
     /* Members: GtkHandleBox. */
 }
 
@@ -562,8 +653,6 @@ GtkSwitch.trough:insensitive
     /* Members: GtkSpinner. */
 }
 
-
-/**********************************************/
 .info 
 {
     background-color: @info_bg_color;
