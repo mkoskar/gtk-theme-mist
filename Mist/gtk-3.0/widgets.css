@@ -1,17 +1,6 @@
-/*
- *      TODO
- *      ====
- *
- *      - scrolled window corner
- *      - progressbar inner border
- *      - on|off buttons
- *      - menus labels
- *      - menus tooltips
- *      - menus shortcut hints
- */
-
 /**********************************************/
-* {
+* 
+{ 
     -GtkWindow-resize-grip-height: 0;
     -GtkWindow-resize-grip-width: 0;
 
@@ -125,7 +114,6 @@ GtkStatusbar GtkLabel
 
 
 /**********************************************/
-/* Members: GtkTooltip. */
 .tooltip
 {
     background-color: @tooltip_bg_color;
@@ -136,7 +124,6 @@ GtkStatusbar GtkLabel
 
 
 /**********************************************/
-/* Members: GtkViewport. */
 .view
 {
     background-color: @base_color;
@@ -163,7 +150,6 @@ row:nth-child(odd)
 
 
 /**********************************************/
-/* Members: GtkProgressBar, GtkScale, GtkScrollbar. */
 .trough,
 .trough row,
 .trough row:prelight,
@@ -197,8 +183,14 @@ GtkProgressBar.trough
     background-color: @bg_color;
 }
 
-GtkScale {
+GtkScale
+{
     border-color: @border_color1;
+}
+
+GtkScrolledWindow
+{
+    border: none;
 }
 /**********************************************/
 
@@ -223,7 +215,6 @@ GtkSwitch.trough:insensitive
 
 
 /**********************************************/
-/* Members: GtkScale, GtkScrollbar. */
 .slider 
 {
     background-color: @bg_color;
@@ -259,7 +250,6 @@ GtkSwitch.trough:insensitive
 
 
 /**********************************************/
-/* Members: GtkCheckButton, GtkRadioButton, GtkButton, GtkToggleButton. */
 .button 
 {
     background-color: @bg_color;
@@ -289,11 +279,15 @@ GtkSwitch.trough:insensitive
     border-color: @insensitive_border_color;
     color: mix(@fg_color, @base_color, 0.5);
 }
+
+.spinbutton.button
+{
+    border: none;
+}
 /**********************************************/
 
 
 /**********************************************/
-/* Members: GtkEntry. */
 .entry 
 {
     background-color: @base_color;
@@ -316,7 +310,6 @@ GtkCheckButton:insensitive
     background-color: transparent;
 }
 
-/* Members: GtkCellRendererToggle, GtkRadioMenuItem, GtkRadioButton. */
 .radio,
 .radio:selected,
 .radio:selected:focused
@@ -325,7 +318,6 @@ GtkCheckButton:insensitive
     color: @selected_bg_color;
 }
 
-/* Members: GtkCheckMenuItem, GtkCellRendererToggle, GtkCheckButton. */
 .check,
 .check:selected,
 .check:selected:focused
@@ -381,7 +373,6 @@ GtkComboBox .button
 
 
 /**********************************************/
-/* Members: GtkToolbar. */
 .toolbar
 {
     padding: 2px 0;
@@ -391,7 +382,6 @@ GtkComboBox .button
 
 
 /**********************************************/
-/* Members: GtkProgressBar, GtkCellRendererProgress. */
 .progressbar,
 .progressbar row,
 .progressbar row:prelight
@@ -414,7 +404,6 @@ GtkComboBox .button
 
 
 /**********************************************/
-/* Members: GtkMenuBar. */
 .menubar 
 {
     border-width: 0 0 1px 0;
@@ -430,13 +419,11 @@ GtkComboBox .button
     padding: 3px;
 }
 
-/* Members: GtkCheckMenuItem, GtkRadioMenuItem, GtkMenu, GtkMenuItem. */
 .menu, .menuitem 
 {
     padding: 2px;
 }
 
-/* Members: GtkMenuItem. */
 .menuitem 
 {
     border-width: 0;
@@ -484,7 +471,7 @@ GtkComboBox .button
 /**********************************************/
 .notebook
 {
-    padding: 0;
+    padding: 3px;
     background-color: @bg_color;
 
     border-color: @base_color;
@@ -607,50 +594,9 @@ GtkComboBox .button
 
 
 /**********************************************/
-.accelerator 
-{
-    /* Members: GtkAccelLabel. */
-}
-
-.arrow 
-{
-    /* Members: GtkArrow. */
-}
-
-.calendar 
-{
-    /* Members: GtkCalendar. */
-}
-
-.dock
-{
-    /* Members: GtkHandleBox. */
-}
-
 .expander 
 {
-    /* Members: GtkExpander. */
     border-color: @fg_color;
-}
-
-.frame 
-{
-    /* Members: GtkFrame. */
-}
-
-.popup 
-{
-    /* Members: GtkMenu. */
-}
-
-.scrolled-window 
-{
-    /* Members: GtkScrolledWindow. */
-}
-
-.spinner 
-{
-    /* Members: GtkSpinner. */
 }
 
 .info 
