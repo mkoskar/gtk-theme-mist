@@ -66,7 +66,18 @@
 }
 
 .view:focused,
-.entry:focused
+.entry:focused,
+GtkLabel:focused
+{
+    color: @fg_color;
+}
+
+GtkTreeView.view:focused
+{
+    color: @border_color;
+}
+
+GtkTreeView.view:focused *
 {
     color: @fg_color;
 }
@@ -116,9 +127,8 @@ GtkStatusbar GtkLabel
 /**********************************************/
 .tooltip
 {
-    background-color: @tooltip_bg_color;
-    color: @tooltip_fg_color;
-    padding: 0;
+    border: 1px solid @fg_color;
+    background-color: @bg_color;
 }
 /**********************************************/
 
@@ -256,6 +266,11 @@ GtkSwitch.trough:insensitive
     border-left-color: @base_color;
     border-top-color: @base_color;
     padding: 1px;
+}
+
+.text-button
+{
+    padding: 4px;
 }
 
 .button:prelight
