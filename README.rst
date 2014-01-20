@@ -3,7 +3,7 @@
 ================
 
 :Description: Mist theme for gtk2/3
-:Licence: GPL
+:Licence: GPL3
 
 
 gtk-2.0
@@ -21,6 +21,34 @@ gtk-3.0
 * based on Mist-Redmond 1.2 (gtk3.8-theme_Mist-Redmond) taken from
   http://gnome-look.org/content/show.php?content=155580
 * work in progress (goal is to match gtk2 version as closely as possible)
+
+
+Install
+=====
+
+Install like this::
+
+    ~/.themes
+    ~/.themes/Mist
+    ~/.themes/Mist/gtk-3.0
+    ~/.themes/Mist/gtk-3.0/widgets.css
+    ~/.themes/Mist/gtk-3.0/colors.css
+    ~/.themes/Mist/gtk-3.0/gtk.css
+    ~/.themes/Mist/gtk-2.0
+    ~/.themes/Mist/gtk-2.0/gtkrc
+
+For GTK 2.x::
+
+    $ cat ~/.gtkrc-2.0
+    gtk-theme-name="Mist"
+    ...
+
+For GTK 3.x::
+
+    $ cat ~/.config/gtk-3.0/settings.ini
+    [Settings]
+    gtk-theme-name=Mist
+    ...
 
 
 Notes
