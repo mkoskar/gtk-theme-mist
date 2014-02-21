@@ -38,7 +38,7 @@
     border-width: 1px;
 }
 
-*:prelight
+*:hover
 {
     background-color: shade(@bg_color, 1.03);
     color: @fg_color;
@@ -147,7 +147,7 @@ row
     border-width: 0;
 }
 
-row:prelight
+row:hover
 {
     background-color: shade(@base_color, 0.95);
 }
@@ -162,7 +162,7 @@ row:nth-child(odd)
 /**********************************************/
 .trough,
 .trough row,
-.trough row:prelight,
+.trough row:hover,
 .trough row:selected,
 .trough row:selected:focused
 {
@@ -181,9 +181,9 @@ row:nth-child(odd)
 }
 
 .scrollbar.button,
-.scrollbar.button:prelight,
+.scrollbar.button:hover,
 .scrollbar.button:active,
-.scrollbar.button:prelight:active
+.scrollbar.button:hover:active
 {
     border-color: @border_color;
 }
@@ -252,7 +252,7 @@ GtkSwitch.trough:insensitive
     background-color: @bg_color;
 }
 
-.pane-separator:prelight
+.pane-separator:hover
 {
     background-color: shade(@base_color, 0.95);
 }
@@ -273,13 +273,13 @@ GtkSwitch.trough:insensitive
     padding: 4px;
 }
 
-.button:prelight
+.button:hover
 {
     background-color: shade(@bg_color, 1.03);
 }
 
 .button:active,
-.button:prelight:active
+.button:hover:active
 {
     background-color: shade(@bg_color, 0.9);
     border-right-color: #f3f1ef;
@@ -341,10 +341,10 @@ GtkCheckButton:insensitive
     color: shade(@selected_bg_color, 0.9);
 }
 
-.radio:prelight,
-.check:prelight,
-.radio:prelight:focused,
-.check:prelight:focused
+.radio:hover,
+.check:hover,
+.radio:hover:focused,
+.check:hover:focused
 {
     background-color: shade(@base_color, 1.03);
     border-color: @selected_bg_color;
@@ -377,7 +377,7 @@ GtkComboBox
 
 GtkComboBox:insensitive
 {
-    background-color: shade(@base_color, 0.95);
+    background-color: shade(@bg_color, 0.95);
 }
 
 GtkComboBox .button
@@ -399,7 +399,7 @@ GtkComboBox .button
 /**********************************************/
 .progressbar,
 .progressbar row,
-.progressbar row:prelight
+.progressbar row:hover
 {
     background-color: @selected_bg_color;
     color: @selected_fg_color;
@@ -424,17 +424,12 @@ GtkComboBox .button
     border-width: 0 0 1px 0;
 }
 
-.menubar .menuitem
-{
-    padding: 3px 7px 2px 7px;
-}
-
 .menubar .separator
 {
     padding: 3px;
 }
 
-.menu, .menuitem
+.menu
 {
     padding: 2px;
 }
@@ -442,20 +437,24 @@ GtkComboBox .button
 .menuitem
 {
     border-width: 0;
-    background-color: @bg_color;
+    background-color: transparent;
+    padding: 3px 7px 2px 7px;
 }
 
-.menuitem:prelight,
-.menuitem *:prelight
+.menuitem GtkLabel
+{
+    color: inherit;
+}
+
+.menuitem:hover,
+.menuitem *:hover
 {
     background-color: @selected_bg_color;
     color: @selected_fg_color;
 }
 
 .menuitem.check,
-.menuitem.check:prelight,
-.menuitem.radio,
-.menuitem.radio:prelight
+.menuitem.radio
 {
     background-color: @base_color;
     color: @selected_bg_color;
@@ -463,22 +462,16 @@ GtkComboBox .button
     border-width: 1px;
 }
 
-.menuitem.check,
-.menuitem.check:prelight
+.menuitem.check
 {
     color: shade(@selected_bg_color, 0.9);
 }
 
-.menuitem.radio:insensitive,
-.menuitem.check:insensitive
+.menuitem.check:insensitive,
+.menuitem.radio:insensitive
 {
     background-color: shade(@base_color, 0.95);
     color: mix(@fg_color, @base_color, 0.5);
-}
-
-.menuitem *:insensitive
-{
-    background-color: transparent;
 }
 /**********************************************/
 
@@ -594,14 +587,14 @@ GtkComboBox .button
     background-color: shade(@bg_color, 1.05);
 }
 
-.sidebar row:prelight,
-.sidebar.view row:prelight
+.sidebar row:hover,
+.sidebar.view row:hover
 {
     background-color: @bg_color;
 }
 
 .sidebar row:selected,
-.sidebar row:selected:prelight
+.sidebar row:selected:hover
 {
     background-color: @selected_bg_color;
 }
