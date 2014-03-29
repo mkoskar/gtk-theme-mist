@@ -1,13 +1,12 @@
-================
- gtk-theme-mist
-================
+gtk-theme-mist
+==============
 
 :Description: Mist theme for gtk2/3
-:Licence: GPL3
+:Licence: GPL
 
 
 gtk-2.0
-=======
+-------
 
 * uses Mist engine
 * taken from Arch Linux gtk-engines 2.21.0-1 package
@@ -15,7 +14,7 @@ gtk-2.0
 
 
 gtk-3.0
-=======
+-------
 
 * uses default gtk3 engine
 * based on Mist-Redmond 1.2 (gtk3.8-theme_Mist-Redmond) taken from
@@ -24,7 +23,7 @@ gtk-3.0
 
 
 Install
-=====
+-------
 
 Install like this::
 
@@ -49,12 +48,3 @@ For GTK 3.x::
     [Settings]
     gtk-theme-name=Mist
     ...
-
-
-Notes
-=====
-
-Testing on Arch Linux::
-
-    extra/gtk2 2.24.22-1
-    extra/gtk3 3.10.6-1
