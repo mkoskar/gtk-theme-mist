@@ -35,7 +35,6 @@
     color: @fg_color;
     border-color: @border_color;
     border-style: solid;
-    border-width: 1px;
 }
 
 *:hover
@@ -188,6 +187,11 @@ row:nth-child(odd)
     border-color: @border_color;
 }
 
+.scrollbar.slider
+{
+    border-width: 1px;
+}
+
 GtkProgressBar.trough
 {
     background-color: @bg_color;
@@ -195,6 +199,7 @@ GtkProgressBar.trough
 
 GtkScale
 {
+    border-width: 1px;
     border-color: @border_color1;
 }
 
@@ -206,6 +211,10 @@ GtkScrolledWindow
 
 
 /**********************************************/
+GtkSwitch {
+    border-width: 1px;
+}
+
 GtkSwitch.trough
 {
     background-color: transparent;
@@ -265,11 +274,13 @@ GtkSwitch.trough:insensitive
     background-color: @bg_color;
     border-left-color: @base_color;
     border-top-color: @base_color;
+    border-width: 1px;
     padding: 1px;
 }
 
 .text-button
 {
+    border-width: 1px;
     padding: 4px;
 }
 
@@ -278,14 +289,18 @@ GtkSwitch.trough:insensitive
     background-color: shade(@bg_color, 1.03);
 }
 
-.button:active,
-.button:hover:active
+.button:active
 {
     background-color: shade(@bg_color, 0.9);
     border-right-color: #f3f1ef;
     border-bottom-color: #f3f1ef;
     border-left-color: #8c8477;
     border-top-color: #8c8477;
+}
+
+.button:active:hover
+{
+    background-color: shade(@bg_color, 1.03);
 }
 
 .button:insensitive
@@ -299,6 +314,11 @@ GtkSwitch.trough:insensitive
 {
     border: none;
 }
+
+.spinbutton.button:focused
+{
+    color: @fg_color;
+}
 /**********************************************/
 
 
@@ -307,6 +327,7 @@ GtkSwitch.trough:insensitive
 {
     background-color: @base_color;
     padding: 2px 2px 3px 2px;
+    border-width: 1px;
 }
 
 .entry:insensitive
@@ -432,6 +453,7 @@ GtkComboBox .button
 .menu
 {
     padding: 2px;
+    border-width: 1px;
 }
 
 .menuitem
@@ -485,6 +507,7 @@ GtkComboBox .button
     border-color: @base_color;
     border-right-color: @border_color;
     border-bottom-color: @border_color;
+    border-width: 1px;
 }
 
 .notebook tab
@@ -500,7 +523,6 @@ GtkComboBox .button
 
 .notebook tab.top
 {
-    padding-bottom: 1px;
     border-right-color: @border_color1;
     border-left-color: @border_color1;
 }
@@ -514,12 +536,10 @@ GtkComboBox .button
 {
     border-right-color: @border_color;
     border-left-color: @base_color;
-    padding-bottom: 2px;
 }
 
 .notebook tab.bottom
 {
-    padding-top: 1px;
     border-right-color: @border_color1;
     border-left-color: @border_color1;
     border-bottom-color: @border_color1;
@@ -535,12 +555,10 @@ GtkComboBox .button
     border-right-color: @border_color;
     border-left-color: @base_color;
     border-bottom-color: @border_color;
-    padding-top: 2px;
 }
 
 .notebook tab.left
 {
-    padding-right: 1px;
     border-bottom-color: @border_color1;
     border-top-color: @border_color1;
 }
@@ -554,12 +572,10 @@ GtkComboBox .button
 {
     border-bottom-color: @border_color;
     border-top-color: @base_color;
-    padding-right: 2px;
 }
 
 .notebook tab.right
 {
-    padding-left: 1px;
     border-bottom-color: @border_color1;
     border-top-color: @border_color1;
     border-right-color: @border_color1;
@@ -575,7 +591,6 @@ GtkComboBox .button
     border-bottom-color: @border_color;
     border-top-color: @base_color;
     border-right-color: @border_color;
-    padding-left: 2px;
 }
 /**********************************************/
 
@@ -597,6 +612,29 @@ GtkComboBox .button
 .sidebar row:selected:hover
 {
     background-color: @selected_bg_color;
+}
+/**********************************************/
+
+
+/**********************************************/
+GtkTextView {
+    border-width: 1px;
+}
+
+GtkColorSwatch
+{
+    border-width: 1px;
+    background-color: @bg_color;
+}
+
+GtkStatusbar *
+{
+    border: none;
+}
+
+GtkPopover
+{
+    border-width: 1px;
 }
 /**********************************************/
 
