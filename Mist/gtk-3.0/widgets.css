@@ -445,14 +445,9 @@ GtkComboBox .button
     border-width: 0 0 1px 0;
 }
 
-.menubar .separator
-{
-    padding: 3px;
-}
-
 .menu
 {
-    padding: 2px;
+    padding: 4px;
     border-width: 1px;
 }
 
