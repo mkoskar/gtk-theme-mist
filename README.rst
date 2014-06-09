@@ -3,6 +3,7 @@ gtk-theme-mist
 
 :Description: Mist theme for gtk2/3
 :Licence: GPL
+:AUR: https://aur.archlinux.org/packages/gtk3-theme-mist-git/
 
 
 gtk-2.0
