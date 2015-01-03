@@ -1,10 +1,7 @@
 /**********************************************/
 *
 {
-    -GtkWindow-resize-grip-height: 0;
-    -GtkWindow-resize-grip-width: 0;
-
-    -GtkWidget-focus-line-pattern: "\0";
+    /*-GtkWidget-focus-line-pattern: "\0"; use CSS outline-style*/
 
     -GtkCheckButton-indicator-size: 12;
     -GtkCheckMenuItem-indicator-size: 12;
@@ -16,20 +13,20 @@
 
     -GtkMenuItem-arrow-scaling: 0.7;
 
-    -GtkButton-child-displacement-x: 0;
-    -GtkButton-child-displacement-y: 0;
-    -GtkButton-default-border: 0;
+    /*-GtkButton-child-displacement-x: 0; default*/
+    /*-GtkButton-child-displacement-y: 0; default*/
+    /*-GtkButton-default-border: 0; use CSS margins and padding*/
 
-    -GtkScrolledWindow-scrollbar-spacing: 3;
+    /*-GtkScrolledWindow-scrollbar-spacing: 3; default*/
 
     -GtkRange-trough-border: 0;
-    -GtkRange-stepper-spacing: -1;
+    /*-GtkRange-stepper-spacing: -1; should be >=0*/
 
-    -GtkNotebook-initial-gap: 0;
+    /*-GtkNotebook-initial-gap: 0; default*/
     -GtkNotebook-tab-curvature: 0;
-    -GtkNotebook-tab-overlap: 2;
+    /*-GtkNotebook-tab-overlap: 2; default*/
 
-    -GtkPaned-handle-size: 5;
+    /*-GtkPaned-handle-size: 5; default*/
 
     padding: 0;
     color: @fg_color;
