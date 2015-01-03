@@ -22,6 +22,19 @@ gtk-3.0
   http://gnome-look.org/content/show.php?content=155580
 * work in progress (goal is to match gtk2 version as closely as possible)
 
+Known Issues (as of 03.01.2015 with gtk 3.14.6):
+
+* focus hint
+* text on progress bar
+* visited links are white
+* ComboBoxes: color under cursor should be white
+* CheckBoxes, ComboBoxes: tick disappears
+* Buttons: down state
+* Buttons in dialogs
+* FileChooser
+* Tooltips
+* Notebook, indent inactive tabs
+
 
 Install
 -------
