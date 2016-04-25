@@ -255,7 +255,9 @@ slider:insensitive
 /**********************************************/
 separator
 {
-    color: @border_color;
+    background-color: @border_color;
+    min-height: 1px;
+    min-width: 1px;
 }
 /**********************************************/
 
@@ -263,7 +265,7 @@ separator
 /**********************************************/
 pane-separator
 {
-    border-width: 0;
+    border-width: 2;
     background-color: @bg_color;
 }
 
