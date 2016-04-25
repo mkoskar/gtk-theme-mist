@@ -36,12 +36,6 @@
     border-style: solid;
 }
 
-/**:hover
-{
-    background-color: shade(@bg_color, 1.03);
-    color: @fg_color;
-}
-*/
 *:selected,
 .view:selected,
 .entry:selected
