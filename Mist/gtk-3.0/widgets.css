@@ -36,12 +36,12 @@
     border-style: solid;
 }
 
-*:hover
+/**:hover
 {
     background-color: shade(@bg_color, 1.03);
     color: @fg_color;
 }
-
+*/
 *:selected,
 .view:selected,
 .entry:selected
@@ -140,17 +140,17 @@ tooltip
 
 
 /**********************************************/
-.row
+row
 {
     border-width: 0;
 }
 
-.row:hover
+row:hover
 {
     background-color: shade(@base_color, 0.95);
 }
 
-.row:nth-child(odd)
+row:nth-child(odd)
 {
     background-color: shade(@base_color, 0.97);
 }
@@ -158,48 +158,61 @@ tooltip
 
 
 /**********************************************/
-.trough,
-.trough .row,
-.trough .row:hover,
-.trough .row:selected,
-.trough .row:selected:focused
+trough,
+trough > row,
+trough > row:hover,
+trough > row:selected,
+trough > row:selected:focused
 {
     background-color: mix(@fg_color, @bg_color, 0.9);
-    border-width: 1px;
+    border-width: 0px;
 }
 
-.trough .row:selected
+trough > row:selected
 {
     border-color: @fg_color;
 }
 
-.trough .row:selected:focused
+trough > row:selected:focused
 {
     border-color: @selected_fg_color;
 }
 
-scrollbar button,
-scrollbar button:hover,
-scrollbar button:active,
-scrollbar button:hover:active
+scrollbar > button,
+scrollbar > button:hover,
+scrollbar > button:active,
+scrollbar > button:hover:active
 {
     border-color: @border_color;
 }
 
-scrollbar slider
+scrollbar > slider
 {
     border-width: 1px;
 }
 
-progressbar.trough
+progressbar > trough
 {
     background-color: @bg_color;
 }
 
-scale
+scale > contents > trough
 {
     border-width: 1px;
     border-color: @border_color1;
+    border-right-color: @base_color;
+    border-bottom-color: @base_color;
+}
+
+scale > contents > trough > slider
+{
+    background-color: @bg_color;
+    border-left-color: @base_color;
+    border-top-color: @base_color;
+    border-width: 1px;
+    padding: 1px;
+    min-height: 10px;
+    min-width: 10px;
 }
 
 scrolledwindow
@@ -235,12 +248,12 @@ switch trough:insensitive
 /**********************************************/
 slider
 {
+    border-width: 1px;
     background-color: @bg_color;
 }
 
 slider:insensitive
 {
-    background-color: shade(@bg_color, 0.95);
 }
 /**********************************************/
 
