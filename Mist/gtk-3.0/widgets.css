@@ -180,9 +180,15 @@ scrollbar > button:hover:active
     border-color: @border_color;
 }
 
-scrollbar > slider
+scrollbar slider
 {
+    background-color: @bg_color;
+    border-left-color: @base_color;
+    border-top-color: @base_color;
     border-width: 1px;
+    padding: 1px;
+    min-height: 10px;
+    min-width: 10px;
 }
 
 progressbar > trough
