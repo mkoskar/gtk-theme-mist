@@ -469,7 +469,7 @@ menuitem
     padding: 3px 7px 2px 7px;
 }
 
-menuitem GtkLabel
+menuitem label
 {
     color: inherit;
 }
