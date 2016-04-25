@@ -3,6 +3,7 @@
 {
     /*-GtkWidget-focus-line-pattern: "\0"; use CSS outline-style*/
 
+    /* START: Deprecated in GTK 3.20 */
     -GtkCheckButton-indicator-size: 12;
     -GtkCheckMenuItem-indicator-size: 12;
     -GtkCellRendererToggle-indicator-size: 12;
@@ -27,6 +28,7 @@
     /*-GtkNotebook-tab-overlap: 2; default*/
 
     /*-GtkPaned-handle-size: 5; default*/
+    /* END: Deprecated in GTK 3.20 */
 
     padding: 0;
     color: @fg_color;
@@ -113,7 +115,7 @@ statusbar *
     border-width: 1px 0 0 0;
 }
 
-statusbar GtkLabel
+statusbar label
 {
     border-width: 0;
 }
@@ -138,17 +140,17 @@ tooltip
 
 
 /**********************************************/
-row
+.row
 {
     border-width: 0;
 }
 
-row:hover
+.row:hover
 {
     background-color: shade(@base_color, 0.95);
 }
 
-row:nth-child(odd)
+.row:nth-child(odd)
 {
     background-color: shade(@base_color, 0.97);
 }
@@ -157,21 +159,21 @@ row:nth-child(odd)
 
 /**********************************************/
 .trough,
-.trough row,
-.trough row:hover,
-.trough row:selected,
-.trough row:selected:focused
+.trough .row,
+.trough .row:hover,
+.trough .row:selected,
+.trough .row:selected:focused
 {
     background-color: mix(@fg_color, @bg_color, 0.9);
     border-width: 1px;
 }
 
-.trough row:selected
+.trough .row:selected
 {
     border-color: @fg_color;
 }
 
-.trough row:selected:focused
+.trough .row:selected:focused
 {
     border-color: @selected_fg_color;
 }
@@ -307,12 +309,12 @@ button:insensitive
     color: mix(@fg_color, @base_color, 0.5);
 }
 
-spinbutton.button
+spinbutton button
 {
     border: none;
 }
 
-spinbutton.button:focused
+spinbutton button:focused
 {
     color: @fg_color;
 }
@@ -320,14 +322,14 @@ spinbutton.button:focused
 
 
 /**********************************************/
-.entry
+entry
 {
     background-color: @base_color;
     padding: 2px 2px 3px 2px;
     border-width: 1px;
 }
 
-.entry:insensitive
+entry:insensitive
 {
     background-color: shade(@base_color, 0.95);
 }
@@ -398,7 +400,7 @@ combobox:insensitive
     background-color: shade(@bg_color, 0.95);
 }
 
-combobox .button
+combobox button
 {
     padding: 0;
 }
@@ -416,20 +418,20 @@ toolbar
 
 /**********************************************/
 progressbar,
-progressbar row,
-progressbar row:hover
+progressbar .row,
+progressbar .row:hover
 {
     background-color: @selected_bg_color;
     color: @selected_fg_color;
     border-width: 1px;
 }
 
-progressbar row:selected
+progressbar .row:selected
 {
     border-color: @fg_color;
 }
 
-progressbar row:selected:focused
+progressbar .row:selected:focused
 {
     border-color: @selected_fg_color;
 }
@@ -489,10 +491,10 @@ menuitem.radio:insensitive
 /**********************************************/
 
 
-/**********************************************/
-notebook
+/** configure tabs */
+notebook > stack
 {
-    padding: 3px;
+    padding: 4px;
     background-color: @bg_color;
 
     border-color: @base_color;
@@ -501,88 +503,45 @@ notebook
     border-width: 1px;
 }
 
-notebook tab
+notebook > header > tabs > tab
 {
-    padding: 3px;
+    padding: 4px;
+    border-width: 1px;
+    border-right-color: @border_color1;
+    border-left-color: @base_color;
+    border-top-color: @base_color;
     background-color: mix(@fg_color, @bg_color, 0.9);
 }
 
-notebook tab:active
+notebook > header > tabs > tab:checked
 {
     background-color: @bg_color;
 }
 
-notebook tab.top
+notebook > header.top > tabs > tab
 {
-    border-right-color: @border_color1;
-    border-left-color: @border_color1;
+    margin-bottom: -1px;
+    border-bottom-width: 0px;
 }
 
-notebook tab:first-child.top
+notebook > header.bottom > tabs > tab
 {
-    border-left-color: @base_color;
+    margin-top: -1px;
+    border-top-width: 0px;
 }
 
-notebook tab.top:active
+notebook > header.left > tabs > tab
 {
-    border-right-color: @border_color;
-    border-left-color: @base_color;
+    margin-right: -1px;
+    border-right-width: 0px;
 }
 
-notebook tab.bottom
+notebook > header.right > tabs > tab
 {
-    border-right-color: @border_color1;
-    border-left-color: @border_color1;
-    border-bottom-color: @border_color1;
+    margin-left: -1px;
+    border-left-width: 0px;
 }
 
-notebook tab:first-child.bottom
-{
-    border-left-color: @base_color;
-}
-
-notebook tab.bottom:active
-{
-    border-right-color: @border_color;
-    border-left-color: @base_color;
-    border-bottom-color: @border_color;
-}
-
-notebook tab.left
-{
-    border-bottom-color: @border_color1;
-    border-top-color: @border_color1;
-}
-
-notebook tab:first-child.left
-{
-    border-top-color: @base_color;
-}
-
-notebook tab.left:active
-{
-    border-bottom-color: @border_color;
-    border-top-color: @base_color;
-}
-
-notebook tab.right
-{
-    border-bottom-color: @border_color1;
-    border-top-color: @border_color1;
-    border-right-color: @border_color1;
-}
-
-notebook tab:first-child.right
-{
-    border-top-color: @base_color;
-}
-
-notebook tab.right:active
-{
-    border-bottom-color: @border_color;
-    border-top-color: @base_color;
-    border-right-color: @border_color;
-}
 /**********************************************/
 
 
