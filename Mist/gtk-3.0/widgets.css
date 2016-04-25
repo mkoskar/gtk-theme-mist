@@ -417,21 +417,21 @@ toolbar
 
 
 /**********************************************/
-progressbar,
-progressbar .row,
-progressbar .row:hover
+progressbar progress,
+progressbar progress .row,
+progressbar progress .row:hover
 {
     background-color: @selected_bg_color;
     color: @selected_fg_color;
     border-width: 1px;
 }
 
-progressbar .row:selected
+progressbar progress .row:selected
 {
     border-color: @fg_color;
 }
 
-progressbar .row:selected:focused
+progressbar progress .row:selected:focused
 {
     border-color: @selected_fg_color;
 }
@@ -541,9 +541,6 @@ notebook > header.right > tabs > tab
     margin-left: -1px;
     border-left-width: 0px;
 }
-
-/**********************************************/
-
 
 /**********************************************/
 sidebar,
