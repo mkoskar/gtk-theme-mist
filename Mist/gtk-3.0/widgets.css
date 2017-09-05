@@ -174,12 +174,22 @@ trough > row:selected:focus
 }
 
 
-scrollbar > button,
-scrollbar > button:hover,
-scrollbar > button:active,
-scrollbar > button:hover:active
+scrollbar button,
+scrollbar button:hover,
+scrollbar button:active,
+scrollbar button:hover:active
 {
     border-color: @border_color;
+}
+
+scrollbar.horizontal button
+{
+    min-width: 10px;
+}
+
+scrollbar.vertical button {
+    min-height: 10px;
+    -gtk-icon-transform: rotate(90deg);
 }
 
 scrollbar slider
