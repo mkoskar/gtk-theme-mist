@@ -4,6 +4,23 @@
     /*-GtkWidget-focus-line-pattern: "\0"; use CSS outline-style*/
 
     /* START: Deprecated in GTK 3.20 */
+
+    /*-GtkMenuItem-arrow-scaling: 0.7;*/
+
+    /*-GtkButton-child-displacement-x: 0; default*/
+    /*-GtkButton-child-displacement-y: 0; default*/
+    /*-GtkButton-default-border: 0; use CSS margins and padding*/
+
+    /*-GtkScrolledWindow-scrollbar-spacing: 3; default*/
+    /*-GtkRange-stepper-spacing: -1; should be >=0*/
+
+    /*-GtkNotebook-initial-gap: 0; default*/
+    /*-GtkNotebook-tab-curvature: 0;*/
+    /*-GtkNotebook-tab-overlap: 2; default*/
+
+    /*-GtkPaned-handle-size: 5; default*/
+    /* END: Deprecated in GTK 3.20 */
+
     -GtkCheckButton-indicator-size: 12;
     -GtkCheckMenuItem-indicator-size: 12;
     -GtkCellRendererToggle-indicator-size: 12;
@@ -12,23 +29,7 @@
     -GtkExpander-expander-size: 9;
     -GtkTreeView-expander-size: 9;
 
-    -GtkMenuItem-arrow-scaling: 0.7;
-
-    /*-GtkButton-child-displacement-x: 0; default*/
-    /*-GtkButton-child-displacement-y: 0; default*/
-    /*-GtkButton-default-border: 0; use CSS margins and padding*/
-
-    /*-GtkScrolledWindow-scrollbar-spacing: 3; default*/
-
     -GtkRange-trough-border: 0;
-    /*-GtkRange-stepper-spacing: -1; should be >=0*/
-
-    /*-GtkNotebook-initial-gap: 0; default*/
-    -GtkNotebook-tab-curvature: 0;
-    /*-GtkNotebook-tab-overlap: 2; default*/
-
-    /*-GtkPaned-handle-size: 5; default*/
-    /* END: Deprecated in GTK 3.20 */
 
     padding: 0;
     color: @fg_color;
@@ -44,37 +45,37 @@
     color: @fg_color;
 }
 
-*:selected:focused,
-.view:selected:focused,
-.entry:selected:focused
+*:selected:focus,
+.view:selected:focus,
+.entry:selected:focus
 {
     background-color: @selected_bg_color;
     color: @selected_fg_color;
 }
 
-*:focused
+*:focus
 {
     color: @border_color;
 }
 
-.view:focused,
-.entry:focused,
-label:focused
+.view:focus,
+.entry:focus,
+label:focus
 {
     color: @fg_color;
 }
 
-treeview.view:focused
+treeview.view:focus
 {
     color: @border_color;
 }
 
-treeview.view:focused *
+treeview.view:focus *
 {
     color: @fg_color;
 }
 
-*:insensitive
+*:disabled
 {
     background-color: shade(@bg_color, 0.95);
     border-color: @insensitive_border_color;
@@ -92,10 +93,10 @@ treeview.view:focused *
 /**********************************************/
 label,
 label:active,
-label:insensitive,
+label:disabled,
 image,
 image:active,
-image:insensitive
+image:disabled
 {
     background-color: transparent;
     border-width: 0;
@@ -156,7 +157,7 @@ trough,
 trough > row,
 trough > row:hover,
 trough > row:selected,
-trough > row:selected:focused
+trough > row:selected:focus
 {
     background-color: mix(@fg_color, @bg_color, 0.9);
     border-width: 0px;
@@ -167,10 +168,11 @@ trough > row:selected
     border-color: @fg_color;
 }
 
-trough > row:selected:focused
+trough > row:selected:focus
 {
     border-color: @selected_fg_color;
 }
+
 
 scrollbar > button,
 scrollbar > button:hover,
@@ -238,7 +240,7 @@ switch trough:active
     color: @selected_fg_color;
 }
 
-switch trough:insensitive
+switch trough:disabled
 {
     background-color: shade(@bg_color, 0.95);
 }
@@ -252,7 +254,7 @@ slider
     background-color: @bg_color;
 }
 
-slider:insensitive
+slider:disabled
 {
 }
 /**********************************************/
@@ -275,7 +277,7 @@ separator
 /**********************************************/
 pane-separator
 {
-    border-width: 2;
+    border-width: 2px;
     background-color: @bg_color;
 }
 
@@ -321,7 +323,7 @@ button:active:hover
     background-color: shade(@bg_color, 1.03);
 }
 
-button:insensitive
+button:disabled
 {
     background-color: shade(@bg_color, 0.95);
     border-color: @insensitive_border_color;
@@ -333,7 +335,7 @@ spinbutton button
     border: none;
 }
 
-spinbutton button:focused
+spinbutton button:focus
 {
     color: @fg_color;
 }
@@ -348,7 +350,7 @@ entry
     border-width: 1px;
 }
 
-entry:insensitive
+entry:disabled
 {
     background-color: shade(@base_color, 0.95);
 }
@@ -358,15 +360,15 @@ entry:insensitive
 /**********************************************/
 checkbutton,
 checkbutton:selected,
-checkbutton:selected:focused,
-checkbutton:insensitive
+checkbutton:selected:focus,
+checkbutton:disabled
 {
     background-color: transparent;
 }
 
 radio,
 radio:selected,
-radio:selected:focused
+radio:selected:focus
 {
     background-color: @base_color;
     color: @selected_bg_color;
@@ -374,7 +376,7 @@ radio:selected:focused
 
 check,
 check:selected,
-check:selected:focused
+check:selected:focus
 {
     background-color: @base_color;
     color: shade(@selected_bg_color, 0.9);
@@ -382,17 +384,17 @@ check:selected:focused
 
 radio:hover,
 check:hover,
-radio:hover:focused,
-.check:hover:focused
+radio:hover:focus,
+.check:hover:focus
 {
     background-color: shade(@base_color, 1.03);
     border-color: @selected_bg_color;
 }
 
-radio:insensitive,
-radio:insensitive:selected,
-check:insensitive,
-check:insensitive:selected
+radio:disabled,
+radio:disabled:selected,
+check:disabled,
+check:disabled:selected
 {
     background-color: shade(@base_color, 0.95);
     color: mix(@fg_color, @base_color, 0.5);
@@ -414,7 +416,7 @@ combobox
     border-width: 0;
 }
 
-combobox:insensitive
+combobox:disabled
 {
     background-color: shade(@bg_color, 0.95);
 }
@@ -450,7 +452,7 @@ progressbar progress .row:selected
     border-color: @fg_color;
 }
 
-progressbar progress .row:selected:focused
+progressbar progress .row:selected:focus
 {
     border-color: @selected_fg_color;
 }
@@ -501,8 +503,8 @@ menuitem.check
     color: shade(@selected_bg_color, 0.9);
 }
 
-menuitem.check:insensitive,
-menuitem.radio:insensitive
+menuitem.check:disabled,
+menuitem.radio:disabled
 {
     background-color: shade(@base_color, 0.95);
     color: mix(@fg_color, @base_color, 0.5);
