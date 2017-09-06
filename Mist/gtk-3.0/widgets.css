@@ -499,6 +499,22 @@ menuitem
     padding: 3px 7px 2px 7px;
 }
 
+menuitem > arrow
+{
+    min-height: 16px;
+    min-width: 16px;
+}
+
+menitem > arrow.left
+{
+    -gtk-icon-source: -gtk-icontheme("pan-start-symbolic");
+}
+
+menuitem > arrow.right
+{
+    -gtk-icon-source: -gtk-icontheme("pan-end-symbolic");
+}
+
 menuitem label
 {
     color: inherit;
