@@ -607,8 +607,14 @@ sidebar row:selected:hover
 
 
 /**********************************************/
-textview {
+textview
+{
     border-width: 1px;
+}
+
+textview *
+{
+    background-color: @base_color;
 }
 
 colorswatch
