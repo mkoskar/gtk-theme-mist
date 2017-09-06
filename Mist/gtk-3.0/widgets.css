@@ -184,10 +184,24 @@ scrollbar button:hover:active
     min-width: 10px;
 }
 
-scrollbar.vertical button.down,
+scrollbar.horizontal button.down
+{
+    -gtk-icon-source: -gtk-icontheme("pan-end-symbolic");
+}
+
+scrollbar.horizontal button.up
+{
+    -gtk-icon-source: -gtk-icontheme("pan-start-symbolic");
+}
+
+scrollbar.vertical button.down
+{
+    -gtk-icon-source: -gtk-icontheme("pan-down-symbolic");
+}
+
 scrollbar.vertical button.up
 {
-    -gtk-icon-transform: rotate(90deg);
+    -gtk-icon-source: -gtk-icontheme("pan-up-symbolic");
 }
 
 scrollbar slider
