@@ -39,7 +39,7 @@
 
 *:selected,
 .view:selected,
-.entry:selected
+entry:selected
 {
     background-color: @selected_bg_color1;
     color: @fg_color;
@@ -47,7 +47,7 @@
 
 *:selected:focus,
 .view:selected:focus,
-.entry:selected:focus
+entry:selected:focus
 {
     background-color: @selected_bg_color;
     color: @selected_fg_color;
@@ -59,7 +59,7 @@
 }
 
 .view:focus,
-.entry:focus,
+entry:focus,
 label:focus
 {
     color: @fg_color;
