@@ -521,7 +521,7 @@ menuitem label
 }
 
 menuitem:hover,
-menuitem *:hover
+menuitem *:not(check):not(radio):hover
 {
     background-color: @selected_bg_color;
     color: @selected_fg_color;
