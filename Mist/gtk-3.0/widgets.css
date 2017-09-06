@@ -37,17 +37,15 @@
     border-style: solid;
 }
 
-*:selected,
 .view:selected,
-.entry:selected
+selection
 {
     background-color: @selected_bg_color1;
     color: @fg_color;
 }
 
-*:selected:focus,
 .view:selected:focus,
-.entry:selected:focus
+selection:focus
 {
     background-color: @selected_bg_color;
     color: @selected_fg_color;
