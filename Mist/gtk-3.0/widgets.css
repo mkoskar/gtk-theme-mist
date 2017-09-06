@@ -131,6 +131,12 @@ tooltip
 {
     background-color: @base_color;
 }
+
+.view > :first-child
+{
+    background-color: inherit;
+    color: inherit;
+}
 /**********************************************/
 
 
@@ -666,11 +672,6 @@ sidebar row:selected:hover
 textview
 {
     border-width: 1px;
-}
-
-textview *
-{
-    background-color: @base_color;
 }
 
 colorswatch
