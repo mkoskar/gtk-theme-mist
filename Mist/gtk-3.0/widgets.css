@@ -19,17 +19,17 @@
     /*-GtkNotebook-tab-overlap: 2; default*/
 
     /*-GtkPaned-handle-size: 5; default*/
-    /* END: Deprecated in GTK 3.20 */
 
-    -GtkCheckButton-indicator-size: 12;
-    -GtkCheckMenuItem-indicator-size: 12;
-    -GtkCellRendererToggle-indicator-size: 12;
+    /*-GtkRange-trough-border: 0;*/
+    /*-GtkCheckButton-indicator-size: 12;*/
+
+    /*-GtkCheckMenuItem-indicator-size: 12;*/
+    /*-GtkCellRendererToggle-indicator-size: 12;*/
+    /* END: Deprecated in GTK 3.20 */
 
     -GtkToolItemGroup-expander-size: 9;
     -GtkExpander-expander-size: 9;
     -GtkTreeView-expander-size: 9;
-
-    -GtkRange-trough-border: 0;
 
     padding: 0;
     color: @fg_color;
@@ -527,22 +527,25 @@ menuitem *:hover
     color: @selected_fg_color;
 }
 
-menuitem.check,
-menuitem.radio
+menuitem check,
+menuitem radio
 {
     background-color: @base_color;
     color: @selected_bg_color;
     border-color: @border_color;
     border-width: 1px;
+    margin-right: 5px;
+    min-height: 1em;
+    min-width: 16px;
 }
 
-menuitem.check
+menuitem check
 {
     color: shade(@selected_bg_color, 0.9);
 }
 
-menuitem.check:disabled,
-menuitem.radio:disabled
+menuitem check:disabled,
+menuitem radio:disabled
 {
     background-color: shade(@base_color, 0.95);
     color: mix(@fg_color, @base_color, 0.5);
