@@ -454,6 +454,11 @@ combobox:disabled
     background-color: shade(@bg_color, 0.95);
 }
 
+combobox arrow
+{
+    -gtk-icon-source: -gtk-icontheme("pan-down-symbolic");
+}
+
 combobox button
 {
     padding: 0;
