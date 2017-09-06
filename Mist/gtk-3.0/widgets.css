@@ -530,18 +530,29 @@ menuitem *:not(check):not(radio):hover
 menuitem check,
 menuitem radio
 {
-    background-color: @base_color;
+    background-color: transparent;
     color: @selected_bg_color;
-    border-color: @border_color;
-    border-width: 1px;
     margin-right: 5px;
-    min-height: 1em;
-    min-width: 16px;
+    min-height: 10px;
+    min-width: 10px;
+}
+
+menuitem check:hover,
+menuitem radio:hover
+{
+    background-color: @bg_color;
 }
 
 menuitem check
 {
+    border-radius: 3px;
     color: shade(@selected_bg_color, 0.9);
+    -gtk-icon-source: -gtk-icontheme("checkbox-symbolic");
+}
+
+menuitem check:checked
+{
+    -gtk-icon-source: -gtk-icontheme("checkbox-checked-symbolic");
 }
 
 menuitem check:disabled,
@@ -549,6 +560,17 @@ menuitem radio:disabled
 {
     background-color: shade(@base_color, 0.95);
     color: mix(@fg_color, @base_color, 0.5);
+}
+
+menuitem radio
+{
+    border-radius: 5px;
+    -gtk-icon-source: -gtk-icontheme("radio-symbolic");
+}
+
+menuitem radio:checked
+{
+    -gtk-icon-source: -gtk-icontheme("radio-checked-symbolic");
 }
 /**********************************************/
 
