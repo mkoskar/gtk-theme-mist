@@ -215,6 +215,11 @@ scrollbar slider
     min-width: 10px;
 }
 
+scrollbar slider:hover
+{
+    background-color: @hover_color;
+}
+
 progressbar > trough
 {
     background-color: @bg_color;
