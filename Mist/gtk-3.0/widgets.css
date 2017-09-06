@@ -482,6 +482,37 @@ progressbar progress .row:selected:focus
 
 
 /**********************************************/
+arrow
+{
+    min-height: 16px;
+    min-width: 16px;
+}
+
+arrow.bottom
+{
+    -gtk-icon-source: -gtk-icontheme("pan-down-symbolic");
+}
+
+arrow.left
+{
+    -gtk-icon-source: -gtk-icontheme("pan-start-symbolic");
+}
+
+arrow.right
+{
+    -gtk-icon-source: -gtk-icontheme("pan-end-symbolic");
+}
+
+arrow.right:dir(rtl)
+{
+    -gtk-icon-source: -gtk-icontheme("pan-end-symbolic-rtl");
+}
+
+arrow.top
+{
+    -gtk-icon-source: -gtk-icontheme("pan-up-symbolic");
+}
+
 menubar
 {
     border-width: 0 0 1px 0;
@@ -497,22 +528,6 @@ menuitem
     border-width: 0;
     background-color: transparent;
     padding: 3px 7px 2px 7px;
-}
-
-menuitem > arrow
-{
-    min-height: 16px;
-    min-width: 16px;
-}
-
-menitem > arrow.left
-{
-    -gtk-icon-source: -gtk-icontheme("pan-start-symbolic");
-}
-
-menuitem > arrow.right
-{
-    -gtk-icon-source: -gtk-icontheme("pan-end-symbolic");
 }
 
 menuitem label
