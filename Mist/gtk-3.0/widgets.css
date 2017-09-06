@@ -91,6 +91,11 @@ treeview.view:focus *
 
 
 /**********************************************/
+headerbar
+{
+    background-color: @bg_color;
+}
+
 label,
 label:active,
 label:disabled,
