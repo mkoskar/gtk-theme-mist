@@ -387,6 +387,11 @@ entry:disabled
 {
     background-color: shade(@base_color, 0.95);
 }
+
+entry progress
+{
+    background-color: shade(@selected_bg_color, 1.35);
+}
 /**********************************************/
 
 
