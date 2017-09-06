@@ -180,15 +180,13 @@ scrollbar button:active,
 scrollbar button:hover:active
 {
     border-color: @border_color;
-}
-
-scrollbar.horizontal button
-{
+    min-height: 10px;
     min-width: 10px;
 }
 
-scrollbar.vertical button {
-    min-height: 10px;
+scrollbar.vertical button.down,
+scrollbar.vertical button.up
+{
     -gtk-icon-transform: rotate(90deg);
 }
 
