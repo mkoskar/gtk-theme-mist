@@ -372,6 +372,12 @@ button:disabled
     color: mix(@fg_color, @base_color, 0.5);
 }
 
+spinbutton,
+spinbutton:focus
+{
+    color: @fg_color;
+}
+
 spinbutton button
 {
     border: none;
