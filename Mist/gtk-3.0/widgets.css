@@ -5,6 +5,7 @@
 
     /* START: Deprecated in GTK 3.20 */
 
+    /* Couldn't figure out how to pass css_basics, but Adwaita can't either */
     /*-GtkMenuItem-arrow-scaling: 0.7;*/
 
     /*-GtkButton-child-displacement-x: 0; default*/
