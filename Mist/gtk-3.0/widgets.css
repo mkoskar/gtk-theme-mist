@@ -713,6 +713,21 @@ expander
     border-color: @fg_color;
 }
 
+expander arrow
+{
+    -gtk-icon-source: -gtk-icontheme("pan-end-symbolic");
+}
+
+expander arrow:dir(rtl)
+{
+    -gtk-icon-source: -gtk-icontheme("pan-end-symbolic-rtl");
+}
+
+expander arrow:checked
+{
+    -gtk-icon-source: -gtk-icontheme("pan-down-symbolic");
+}
+
 info
 {
     background-color: @info_bg_color;
