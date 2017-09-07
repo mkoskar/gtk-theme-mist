@@ -243,6 +243,12 @@ scale > contents > trough > slider
     min-width: 10px;
 }
 
+scale mark *
+{
+    min-height: 5px;
+    min-width: 1px;
+}
+
 scrolledwindow
 {
     border: none;
