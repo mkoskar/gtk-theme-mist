@@ -259,22 +259,19 @@ scrolledwindow
 
 
 /**********************************************/
-switch {
+switch
+{
+    background-color: transparent;
     border-width: 1px;
 }
 
-switch trough
-{
-    background-color: transparent;
-}
-
-switch trough:active
+switch:checked
 {
     background-color: @selected_bg_color;
     color: @selected_fg_color;
 }
 
-switch trough:disabled
+switch:disabled
 {
     background-color: shade(@bg_color, 0.95);
 }
