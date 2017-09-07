@@ -329,6 +329,20 @@ button
     padding: 1px;
 }
 
+button:not(.toggle).destructive-action,
+button:not(.toggle).destructive-action:focus
+{
+    background-color: @error_bg_color;
+    color: @error_fg_color;
+}
+
+button:not(.toggle).suggested-action,
+button:not(.toggle).suggested-action:focus
+{
+    background-color: @question_bg_color;
+    color: @question_fg_color;
+}
+
 button.toggle
 {
     border: 2px @border_color outset;
