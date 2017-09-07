@@ -705,7 +705,7 @@ statusbar *
     border: none;
 }
 
-popover
+popover > :first-child
 {
     border-width: 1px;
 }
