@@ -324,6 +324,16 @@ button
     padding: 1px;
 }
 
+button.toggle
+{
+    border: 2px @border_color outset;
+}
+
+button.toggle:checked
+{
+    border-style: inset;
+}
+
 text-button
 {
     border-width: 1px;
