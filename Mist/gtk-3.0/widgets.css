@@ -215,7 +215,7 @@ scrollbar slider
 
 scrollbar slider:hover
 {
-    background-color: @hover_color;
+    background-color: @scrollbar_slider_hover_color;
 }
 
 progressbar > trough
