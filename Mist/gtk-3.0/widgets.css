@@ -5,6 +5,8 @@
 
     /* START: Deprecated in GTK 3.20 */
 
+    /* Couldn't figure out how to pass CSS Basics, Multiple Backgrounds,
+     * Animated Backgrounds, or Shadows, but Adwaita can't either */
     /*-GtkMenuItem-arrow-scaling: 0.7;*/
 
     /*-GtkButton-child-displacement-x: 0; default*/
@@ -19,17 +21,17 @@
     /*-GtkNotebook-tab-overlap: 2; default*/
 
     /*-GtkPaned-handle-size: 5; default*/
-    /* END: Deprecated in GTK 3.20 */
 
-    -GtkCheckButton-indicator-size: 12;
-    -GtkCheckMenuItem-indicator-size: 12;
-    -GtkCellRendererToggle-indicator-size: 12;
+    /*-GtkRange-trough-border: 0;*/
+    /*-GtkCheckButton-indicator-size: 12;*/
+
+    /*-GtkCheckMenuItem-indicator-size: 12;*/
+    /*-GtkCellRendererToggle-indicator-size: 12;*/
+    /* END: Deprecated in GTK 3.20 */
 
     -GtkToolItemGroup-expander-size: 9;
     -GtkExpander-expander-size: 9;
     -GtkTreeView-expander-size: 9;
-
-    -GtkRange-trough-border: 0;
 
     padding: 0;
     color: @fg_color;
@@ -57,7 +59,7 @@ selection:focus
 }
 
 .view:focus,
-.entry:focus,
+entry:focus,
 label:focus
 {
     color: @fg_color;
@@ -89,6 +91,11 @@ treeview.view:focus *
 
 
 /**********************************************/
+headerbar
+{
+    background-color: @bg_color;
+}
+
 label,
 label:active,
 label:disabled,
@@ -129,6 +136,7 @@ tooltip
 {
     background-color: @base_color;
 }
+
 /**********************************************/
 
 
@@ -242,6 +250,12 @@ scale > contents > trough > slider
     min-width: 10px;
 }
 
+scale mark *
+{
+    min-height: 5px;
+    min-width: 1px;
+}
+
 scrolledwindow
 {
     border: none;
@@ -250,22 +264,19 @@ scrolledwindow
 
 
 /**********************************************/
-switch {
+switch
+{
+    background-color: transparent;
     border-width: 1px;
 }
 
-switch trough
-{
-    background-color: transparent;
-}
-
-switch trough:active
+switch:checked
 {
     background-color: @selected_bg_color;
     color: @selected_fg_color;
 }
 
-switch trough:disabled
+switch:disabled
 {
     background-color: shade(@bg_color, 0.95);
 }
@@ -323,6 +334,30 @@ button
     padding: 1px;
 }
 
+button:not(.toggle).destructive-action,
+button:not(.toggle).destructive-action:focus
+{
+    background-color: @error_bg_color;
+    color: @error_fg_color;
+}
+
+button:not(.toggle).suggested-action,
+button:not(.toggle).suggested-action:focus
+{
+    background-color: @question_bg_color;
+    color: @question_fg_color;
+}
+
+button.toggle
+{
+    border: 2px @border_color outset;
+}
+
+button.toggle:checked
+{
+    border-style: inset;
+}
+
 text-button
 {
     border-width: 1px;
@@ -355,6 +390,12 @@ button:disabled
     color: mix(@fg_color, @base_color, 0.5);
 }
 
+spinbutton,
+spinbutton:focus
+{
+    color: @fg_color;
+}
+
 spinbutton button
 {
     border: none;
@@ -363,6 +404,23 @@ spinbutton button
 spinbutton button:focus
 {
     color: @fg_color;
+}
+
+/* Spinner code lifted from the GTK+ CSS overview */
+@keyframes spin
+{
+    to
+    {
+        -gtk-icon-transform: rotate(1turn);
+    }
+}
+
+spinner:checked
+{
+    animation-name: spin;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
 }
 /**********************************************/
 
@@ -378,6 +436,11 @@ entry
 entry:disabled
 {
     background-color: shade(@base_color, 0.95);
+}
+
+entry progress
+{
+    background-color: shade(@selected_bg_color, 1.35);
 }
 /**********************************************/
 
@@ -446,6 +509,11 @@ combobox:disabled
     background-color: shade(@bg_color, 0.95);
 }
 
+combobox arrow
+{
+    -gtk-icon-source: -gtk-icontheme("pan-down-symbolic");
+}
+
 combobox button
 {
     padding: 0;
@@ -490,6 +558,37 @@ progressbar progress .row:selected:focus
 
 
 /**********************************************/
+arrow
+{
+    min-height: 16px;
+    min-width: 16px;
+}
+
+arrow.bottom
+{
+    -gtk-icon-source: -gtk-icontheme("pan-down-symbolic");
+}
+
+arrow.left
+{
+    -gtk-icon-source: -gtk-icontheme("pan-start-symbolic");
+}
+
+arrow.right
+{
+    -gtk-icon-source: -gtk-icontheme("pan-end-symbolic");
+}
+
+arrow.right:dir(rtl)
+{
+    -gtk-icon-source: -gtk-icontheme("pan-end-symbolic-rtl");
+}
+
+arrow.top
+{
+    -gtk-icon-source: -gtk-icontheme("pan-up-symbolic");
+}
+
 menubar
 {
     border-width: 0 0 1px 0;
@@ -513,31 +612,56 @@ menuitem label
 }
 
 menuitem:hover,
-menuitem *:hover
+menuitem *:not(check):not(radio):hover
 {
     background-color: @selected_bg_color;
     color: @selected_fg_color;
 }
 
-menuitem.check,
-menuitem.radio
+menuitem check,
+menuitem radio
 {
-    background-color: @base_color;
+    background-color: transparent;
     color: @selected_bg_color;
-    border-color: @border_color;
-    border-width: 1px;
+    margin-right: 5px;
+    min-height: 10px;
+    min-width: 10px;
 }
 
-menuitem.check
+menuitem check:hover,
+menuitem radio:hover
 {
-    color: shade(@selected_bg_color, 0.9);
+    background-color: @bg_color;
 }
 
-menuitem.check:disabled,
-menuitem.radio:disabled
+menuitem check
+{
+    border-radius: 3px;
+    color: shade(@selected_bg_color, 0.9);
+    -gtk-icon-source: -gtk-icontheme("checkbox-symbolic");
+}
+
+menuitem check:checked
+{
+    -gtk-icon-source: -gtk-icontheme("checkbox-checked-symbolic");
+}
+
+menuitem check:disabled,
+menuitem radio:disabled
 {
     background-color: shade(@base_color, 0.95);
     color: mix(@fg_color, @base_color, 0.5);
+}
+
+menuitem radio
+{
+    border-radius: 5px;
+    -gtk-icon-source: -gtk-icontheme("radio-symbolic");
+}
+
+menuitem radio:checked
+{
+    -gtk-icon-source: -gtk-icontheme("radio-checked-symbolic");
 }
 /**********************************************/
 
@@ -615,8 +739,11 @@ sidebar row:selected:hover
 
 
 /**********************************************/
-textview {
+textview > :first-child
+{
+    background-color: inherit;
     border-width: 1px;
+    color: inherit;
 }
 
 colorswatch
@@ -630,7 +757,7 @@ statusbar *
     border: none;
 }
 
-popover
+popover > :first-child
 {
     border-width: 1px;
 }
@@ -643,27 +770,44 @@ expander
     border-color: @fg_color;
 }
 
-info
+expander arrow
+{
+    -gtk-icon-source: -gtk-icontheme("pan-end-symbolic");
+}
+
+expander arrow:dir(rtl)
+{
+    -gtk-icon-source: -gtk-icontheme("pan-end-symbolic-rtl");
+}
+
+expander arrow:checked
+{
+    -gtk-icon-source: -gtk-icontheme("pan-down-symbolic");
+}
+
+infobar.info
 {
     background-color: @info_bg_color;
     color: @info_fg_color;
 }
 
-warning
+infobar.warning
 {
     background-color: @warning_bg_color;
     color: @warning_fg_color;
 }
 
-question
+infobar.question
 {
     background-color: @question_bg_color;
     color: @question_fg_color;
 }
 
-error
+infobar.error
 {
     background-color: @error_bg_color;
     color: @error_fg_color;
 }
-/**********************************************/
+/*
+ * vi:et:sts=4:sw=4:ts=4
+ **********************************************/
